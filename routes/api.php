@@ -1,6 +1,7 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Application\Http\Controllers\GetActivitiesController;
+use App\Application\Http\Controllers\ParseReportController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +15,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('/activity', GetActivitiesController::class);
+Route::post('/report', ParseReportController::class);
